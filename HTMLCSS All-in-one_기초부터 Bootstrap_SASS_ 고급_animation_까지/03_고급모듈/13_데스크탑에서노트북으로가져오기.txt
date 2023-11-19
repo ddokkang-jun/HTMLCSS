@@ -1,0 +1,8 @@
+git --version
+
+git clone https://github.com/your-username/your-project.git
+
+git status
+
+git pull origin master 또는 main
+
