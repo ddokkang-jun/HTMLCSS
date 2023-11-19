@@ -1,0 +1,143 @@
+Bootstrap Grid 레이아웃 숙제 해설 12 분☀️
+
+ 
+
+
+0:00 숙제 1
+
+3:58 숙제 2
+
+ 
+ 
+
+실은 버튼복붙보다는 col, row 이런게 매우 간편해서 Bootstrap을 사용합니다.
+
+큰 회사에서 뭐 만들 때도 페이지가 많다면
+
+Bootstrap을 안써도 직접 col, row 같은걸 만들어서 사용하는 경우가 많습니다.
+
+그래서 Bootstrap 쓰든 안쓰든 col, row 같은 class 사용법은 잘 익혀두는게 중요합니다. 
+
+
+
+ 
+
+숙제1 : 위 사진처럼 보이는 반응형 레이아웃을 만들어보세요
+
+(조건) PC사이즈에서는 사진처럼 4열, 태블릿 사이즈에서는 2열, 모바일에서는 1열로 정렬되게 만들어야합니다.
+
+
+
+
+저는 어떻게 했냐면
+ 
+
+각각 다른 사이즈(md,lg,sm) 에서 차지할 column 갯수를 따로따로 설정할 수 있습니다. 
+
+ 
+
+<div class="row">
+  <div class="col-lg-3 col-md-6"> 안녕 </div>
+  <div class="col-lg-3 col-md-6"> 안녕 </div>
+  <div class="col-lg-3 col-md-6"> 안녕 </div>
+  <div class="col-lg-3 col-md-6"> 안녕 </div>
+</div>
+
+간단하게 클래스 두개를 이어붙이면 됩니다.
+
+그럼 각각 lg사이즈에서는 4컬럼, md사이즈에서는 6컬럼을 차지하게 됩니다.
+
+그래서 이렇게 레이아웃 짜놓으면 
+
+lg 사이즈 이상에선 4열
+
+md 사이즈 이상에선 2열
+
+그 외엔 일반 <div> 처럼 1열로 배치됩니다.
+
+ 
+
+이제 안녕이라는 글자 자리에 Card 레이아웃 아무거나 복사 붙여넣기 해주시면 숙제 끝입니다.
+
+나머지는 글넣고 그림넣고 마진넣고 하면 됩니다. 
+
+
+
+
+숙제2 : 위 사진처럼 보이는 반응형 레이아웃을 만들어보세요
+
+ 
+ 
+
+(조건) 모바일 사이즈에선 위 사진처럼 보여야합니다. 
+
+CSS 파일 없이도 가능하지만 사용해도 봐드림 
+
+
+Bootstrap을 이용할 땐 모바일 먼저 만들고 그 다음 PC 레이아웃 만드는게 쉽다고 했습니다. 
+
+그래서 모바일 화면 먼저 디자인해봅시다. 
+
+ 
+
+<div class="container ">
+    <div class="row">
+      <div class="col-2">
+        <img src="img/author.png" width="100%">
+      </div>
+      <div class="col-10">
+        <p>어쩌구 저쩌구 글입니다</p>
+      </div>
+      <div class=""></div>
+    </div>
+</div>  
+
+이게 끝인듯요 
+
+이미지 넣고 글넣고 각각 2대 10으로 쪼갰습니다.
+
+그리고 <div class=""></div> 박스를 하나 더 넣어놨는데 이건 PC 레이아웃에서 필요할 것 같아서 넣어놨습니다.
+
+PC 레이아웃에선 적당히 자리차지해줄 빈 박스가 있어야할 것 같아서요.
+
+ 
+
+ 
+
+<div class="container ">
+    <div class="row">
+      <div class="col-2 col-md-2">
+        <img src="img/author.png" width="100%">
+      </div>
+      <div class="col-10 col-md-5">
+        <p>어쩌구 저쩌구 글입니다</p>
+      </div>
+      <div class="col-md-5"></div>
+    </div>
+</div>  
+
+그 다음 PC 레이아웃을 디자인해봤습니다.
+
+일단 크기부터 집어넣었는데 md 사이즈 이상에선 이미지는 2칸, 글은 5칸, 빈박스는 5칸 차지하라고 했습니다.
+
+그럼 일단 사이즈는 완성되었는데 순서가 좀 이상하니 순서도 추가해주면 되겠습니다. 
+
+ 
+
+<div class="container ">
+    <div class="row">
+      <div class="col-2 col-md-2 order-md-2">
+        <img src="img/author.png" width="100%">
+      </div>
+      <div class="col-10 col-md-5 order-md-1">
+        <p>어쩌구 저쩌구 글입니다</p>
+      </div>
+      <div class="col-md-5 order-md-3"></div>
+    </div>
+</div>  
+
+그래서 order-1 이런 클래스를 넣으면 순서 변경할 수 있댔으니 넣어봤습니다.
+
+근데 md 사이즈 이상에서만 순서 바꾸라고 조건문도 추가했습니다.
+
+여기까지 타임라인 레이아웃 한 줄이 끝났으니 다음 줄도 알아서 만들어봅시다. 

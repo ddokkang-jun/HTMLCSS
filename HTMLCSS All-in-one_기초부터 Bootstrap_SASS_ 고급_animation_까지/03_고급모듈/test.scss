@@ -1,0 +1,275 @@
+@use '_reset.scss';
+
+$메인색상 : #2a4c6e;
+$서브색상 : #333333;
+$화이트색상 : #fff;
+$기본사이즈 : 16px;
+$블루색상: skyblue;
+$소프트블루: #D9EDF6;
+$소프트그린: #DFEFD7;
+$소프트옐로우: #FCF7E2;
+
+@mixin 폰트사이즈($size){
+  font-size: $size;
+}
+@mixin 버튼기본디자인($fontColor){
+  font-size: 16px;
+  padding: 10px;
+  color: $fontColor;
+}
+@mixin 컨테이너기본(){
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+@mixin 플렉스기본(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-w-600 {
+  font-weight: 600;
+}
+.border-radius-5 {
+  border-radius: 5px;
+}
+.display-f {
+  display: flex;
+}
+.flex-baby {
+  align-items: center;
+  justify-content: center;
+}
+.m-b-20 {
+  margin-bottom: 20px;
+}
+.my-m-t-60 {
+  margin-top: 60px;
+}
+.my-m-b-60 {
+  margin-bottom: 60px;
+}
+/* background-And-Border-style */
+@mixin background-And-Border-style($color) {
+  background: $color;
+  border: 1px solid darken($color, 10%);
+}
+.bg-s-b {
+  @include background-And-Border-style($소프트블루);
+}
+.bg-s-g {
+  @include background-And-Border-style($소프트그린);
+}
+.bg-s-y {
+  @include background-And-Border-style($소프트옐로우);
+}
+.padding-2 {
+  padding: 20px;
+}
+.active {
+  background: $블루색상;
+  color: $화이트색상;
+}
+.border-none {
+  border-bottom: none;
+}
+.box {
+  height: 200px;
+}
+
+.third-banner-title {
+  color: $메인색상;
+}
+.third-banner-content {
+  background: $서브색상;
+  color : $화이트색상;
+  font-size : $기본사이즈 + 8px;
+} 
+.red-box {
+  @extend .box;
+  @include 버튼기본디자인($화이트색상);
+  background : red;
+}
+.yellow-box {
+  @extend .box;
+  background : yellow;
+}
+.green-box {
+  @extend .box;
+  background : green;
+}
+.blue-box {
+  @extend .box;
+  @include 버튼기본디자인($화이트색상);
+  background: $블루색상;
+}
+
+.select-container {
+  @include 컨테이너기본();
+}
+
+.select-list {
+  @extend .padding-2;
+  li {
+    @extend .padding-2;
+    border: 1px solid #eee;
+    font-size: 24px;
+  }
+}
+.select-list li:first-child, 
+.select-list li:nth-child(2){
+  @extend .border-none;
+}
+.select-list {
+  li:hover {
+    @extend .active;
+  }
+}
+
+.alert-container {
+  @include 컨테이너기본();
+}
+.my-container {
+  @include 컨테이너기본();
+  
+}
+.my-row {
+  display: flex;
+  flex-direction: row;
+  @extend .padding-2;
+}
+.my-col-6 {
+  width: 50%;
+  @extend .padding-2;
+  border: 1px solid darken(#eee, 10%);
+}
+.my-col-4 {
+  width: 33.33%;
+  @extend .padding-2;
+  border: 1px solid darken(#eee, 10%);
+}
+.my-col-3 {
+  width: 25%;
+  @extend .padding-2;
+  border: 1px solid darken(#eee, 10%);
+}
+
+/* 8강 애니메이션 수업 숙제 관련 스타일 */
+.soft-rotate-box {
+  @include 플렉스기본();
+  @include 폰트사이즈(24px);
+  background: $블루색상;
+  @extend .padding-2;
+  @extend .border-radius-5;
+  color: $화이트색상;
+}
+
+.soft-rotate-box:hover {
+  cursor: pointer;
+  animation-name: 흔들흔들애니메이션;
+  animation-duration : 0.5s;
+  animation-iteration-count : infinite;
+}
+
+@keyframes 흔들흔들애니메이션 {
+  0%{
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: rotate(-10deg);
+  }
+  75%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+/*
+2. 마우스를 올리면 회전하는 + 기호 만들기
+
+분석해보면 (1) 좌측 회전 (2) 우측 회전 + 약간 커지기 순으로 동작합니다.
+*/
+
+.plus-soft-rotate-box:hover {
+  cursor: pointer;
+  animation-name: 플러스버튼애니메이션;
+  animation-duration : 0.5s;
+  animation-fill-mode: forwards; /* 애니메이션이 끝난 후에도 마지막 키프레임의 상태를 유지합니다 */
+  animation-timing-function : linear;
+}
+
+
+@keyframes 플러스버튼애니메이션 {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-40deg);
+    transform: skew(-15deg, -15deg);
+  }
+  100% {
+    transform: rotate(45deg) scale(2);
+  }
+}
+/*
+- 마우스 올리면 검은 메뉴 우측 이동
+- 마우스 올리면 우측에 있던 Menu 글자는 가운데로
+- 마우스 올리면 Item 글자는 (1) 우측 이동 (2) 살짝 비틀기 (3) 좌측이동
+(팁1) 살짝 비트는건 transform : skew() 입니다.
+(팁2) 항상 @keyframes 쓸 이유는 없고 어쩔 땐 transition 만으로도 가능합니다. 
+*/
+.shake-container {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  background: #000;
+  top: 0;
+  left: -200px;
+  z-index: 2;
+  transition: transform 1s cubic-bezier(0.5, 0, 0, 0.99);
+  color: $화이트색상;
+  h4 {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    transition: transform 1s cubic-bezier(0.5, 0, 0, 0.99);
+  }
+  p {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    font-size: 24px;
+  }
+}
+
+.shake-container:hover {
+  transform: translateX(200px); 
+  h4 {
+    transform: translateX(-100px);
+  }
+  p {
+    animation-name: item-text-animation;
+    animation-duration : 0.6s;
+    animation-fill-mode: forwards; 
+    animation-timing-function : linear;
+  }
+}
+
+@keyframes item-text-animation {
+  0%{
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(280px) skew(-50deg);
+
+  }
+  100%{
+    transform: translateX(160px) skew(0, 0);
+  }
+}

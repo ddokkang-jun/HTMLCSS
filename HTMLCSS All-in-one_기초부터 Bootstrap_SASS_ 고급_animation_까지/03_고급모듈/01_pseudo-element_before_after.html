@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:wght@300;400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../기초모듈/normalize.css" />
+		<link rel="stylesheet" href="01_pseudo.css" />
+	</head>
+	<body>
+		<div class="black-bg">
+			<div class="white-bg">
+				<h4 class="contact-us-title">CONTACT US</h4>
+				<form action="#">
+					<div class="my-3">
+						<label for="">Your Email</label>
+						<input
+							type="text"
+							class="form-control user-id-form-control"
+							placeholder="email@example.com"
+						/>
+					</div>
+					<div class="name-area">
+						<div class="firstName">
+							<label for="">First Name</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="lastName">
+							<label for="">Last Name</label>
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label"
+							>Message</label
+						>
+						<textarea
+							class="form-control"
+							id="exampleFormControlTextarea1"
+							rows="3"
+						></textarea>
+					</div>
+					<div class="subscribe-btn-area">
+						<div class="form-check subscribe-area">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								value=""
+								id="flexCheckDefault"
+							/>
+							<label class="form-check-label" for="flexCheckDefault">
+								Subsribe
+							</label>
+						</div>
+						<div class="send-close-btn-area">
+							<button type="submit" class="btn btn-primary">SEND</button>
+							<button type="button" class="btn btn-danger" id="close">
+								CLOSE
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="main-bg">
+			<div class="main-banner-area">
+				<h4 class="main-banner-title">There Is Shoes</h4>
+				<p class="main-banner-text">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
+					ducimus optio velit fugit, vel eaque sint odit quo labore Quas!
+				</p>
+				<button class="main-buy-btn">구매하기</button>
+			</div>
+		</div>
+		<div class="second-banner">
+			<div class="second-banner-text">
+				<h4>How we design shoes</h4>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempore
+					ut quis est nostrum provident molestias totam optio, facilis sunt
+					delectus quod omnis, enim inventore velit veritatis sit. Aliquam,
+					modi! Quod quis debitis a, dolore, perferendis animi excepturi
+					laboriosam ullam perspiciatis voluptas nisi reprehenderit voluptates
+					veritatis quaerat labore praesentium, rem quidem nostrum. Iste numquam
+					consequatur autem, ratione soluta iusto dicta doloremque. Minima dicta
+					rem, repudiandae ad reprehenderit ipsa animi velit deserunt! Ipsam
+					voluptatem similique in sapiente, eligendi soluta. Dignissimos
+					veritatis est quis, cumque repellendus libero! Facere ipsa nobis
+					tempore odit repellat unde vel ab atque eos placeat reprehenderit
+					voluptates libero corporis fugit tenetur, explicabo corrupti. Ex
+					veritatis dolorem velit cum.
+				</p>
+			</div>
+			<input type="file" class="input-file" />
+		</div>
+		<div class="third-banner"></div>
+		<footer class="footer">
+			<button class="contact-btn">contact us</button>
+		</footer>
+	</body>
+
+	<script>
+		// footer 영역의 contact us 버튼 클릭시 모달창이 작동되도록 하는 코드
+		$(".contact-btn").on("click", function () {
+			$(".black-bg").toggleClass("show");
+		});
+
+		// contact us 모달창의 전송버튼, 닫기 버튼을 누르면 모달창이 안보이도록 하는 코드
+		$(".btn").on("click", function () {
+			$(".black-bg").toggleClass("show");
+		});
+
+		// contact us 모달창의 검은색 바탕부분을 마우스클릭하면 모달창이 닫히도록 하는 코드
+		document.querySelector(".black-bg").addEventListener("click", function (e) {
+			if (e.target == document.querySelector(".black-bg")) {
+				document.querySelector(".black-bg").classList.remove("show");
+			}
+		});
+	</script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"
+	></script>
+</html>

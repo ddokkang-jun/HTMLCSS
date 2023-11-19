@@ -1,0 +1,282 @@
+코드양이 줄어드는 class 작명법 (OOCSS, BEM)
+
+
+
+
+코드 양을 줄이는 CSS 작성법 (OOCSS)
+
+ 
+
+누가 빨간버튼과 파란버튼을 만들어오라고 하면 어떻게 만들 것입니까.
+
+가장 간단한 방법은 
+
+
+.main-btn-red {
+  font-size : 20px;
+  padding : 15px;
+  border : none;
+  cursor : pointer;
+  background : red;
+}
+
+.main-btn-blue {
+  font-size : 20px;
+  padding : 15px;
+  border : none;
+  cursor : pointer;
+  background : blue;
+}
+
+class를 두 개 만들어서 각각 <button>에 집어넣는 겁니다.
+
+그럼 빨간 버튼 파란 버튼 완성이지만 중복된 코드가 매우 많이 발생하고 있습니다.
+
+4줄이나 똑같네요. 
+
+그럼 다른 색의 버튼 10개 만들어오라고 하면 똑같은 40줄의 코드가 복붙이 되겠군요.
+
+ 
+
+이 경우 CSS 파일이 매우 길어지기 때문에 보기 싫습니다.
+
+그리고 용량이 큰 CSS 파일은 웹사이트 로딩 속도를 저하합니다.
+
+ 
+
+이렇게 코드를 짜면 어떨까요
+
+.main-btn {
+  font-size : 20px;
+  padding : 15px;
+  border : none;
+  cursor : pointer;
+}
+
+.bg-red {
+  background : red;
+}
+.bg-blue {
+  background : blue;
+}
+
+버튼의 뼈대와 살을 분리하는 겁니다.
+
+1. 버튼의 기본 스타일인 padding, font-size 이런걸 정의하는 class를 하나 만들고 
+
+2. 버튼에 스킨 색깔놀이 하는 용도의 class를 여러개 만들어두는 겁니다.
+
+ 
+
+ 
+
+그럼 이제 html에 사용할 때
+
+<button class="main-btn bg-red">빨간버튼</button>
+<button class="main-btn bg-blue">파란버튼</button>
+
+이렇게 쓰면 아까랑 똑같은 버튼이 탄생합니다.
+
+ 
+
+ 
+
+ 
+
+이렇게 뼈와 살을 각각의 class로 분리하는 방법의 장점은 
+
+1. 중복된 스타일을 재사용가능합니다.
+
+덕분에 CSS 파일용량도 줄어들고 코딩 시간도 절약됩니다.
+
+ 
+
+2. 유지보수가 편리해집니다.
+
+사이트의 모든 버튼의 font-size를 약간 줄여야한다면 이 경우엔 한 곳만 건드리면 모든 버튼이 다 수정되겠죠? 편리합니다.
+
+ 
+
+3. 코드 개빨리 짤 수 있습니다.
+
+.bg-red 이렇게 색깔놀이용 class들을 전문용어로 utility class라고 부릅니다. 
+
+이걸 미리 많이 만들어두면
+
+.bg-red {
+  background : red;
+}
+.bg-green {
+  background : green;
+}
+.bg-blue {
+  background : blue;
+}
+
+앞으로 버튼만들 때 class명을 두세개 고르기만 하면 되니까
+
+css 파일 열지않고도 다양한 스타일을 빠르게 만들 수 있습니다.
+
+(class명을 미리 외워두면요)
+
+심지어 버튼말고도 다른 UI에 색상 줄 때도 적용가능할듯 
+
+ 
+
+
+.font-small {
+  font-size : 12px;
+}
+.font-medium {
+  font-size : 16px;
+}
+.font-lg {
+  font-size : 20px;
+}
+
+▲ 글씨 font-size 변경이 잦다면 이런 식으로 utility class 들을 많이 만들어두고
+
+글자 스타일링할 때 가져다 쓰면 코드짜는게 매우 빨라질 수 있습니다.
+
+(외워두면요)
+
+특히 width, margin, padding, text-align 이런 것들 조정하는 utility class 많이 만들어두면 편리합니다. 
+
+ 
+
+
+
+지금까지 설명한 뼈와 살을 분리하는 CSS 작성방식을 Object Oriented CSS 라고 부릅니다.
+
+어떤 아저씨가 옛날에 주장한건데 장점이 많아 실제 개발시 자주 사용합니다.
+
+이걸 잘 쓰는 라이브러리가 Bootstrap인데 나중에 알아봅시다. 
+
+ 
+
+ 
+
+ 
+
+class 작명할 때 창의력이 딸려서 어렵다면
+
+ 
+
+이것도 방법이 하나 있습니다. BEM 이라는 작명법을 따르면 생각안해도 되어서 편리합니다.
+
+배우기 위해 예제를 하나 가져왔는데 예전에 했던 Profile 소개 섹션을 다시 만든다고 가정합시다. 
+
+ 
+
+ 
+
+<div>
+  <img>
+  <h4>이름</h4>
+  <p>소개글</p>
+  <button>빨간버튼</button>
+  <button>파란버튼</button>
+</div>
+
+HTML은 이렇게 생겼을듯요 
+
+그럼 여기에 있는 모든 HTML 요소에 class명을 한번 작명해봅시다.
+
+class를 6개나 작명해야하기 때문에 창의력이 딸릴 수 있는데 BEM 룰을 적용해보면 작명이 쉬워집니다.
+
+ 
+
+ 
+
+<div class="profile">
+  <img class="profile">
+  <h4 class="profile">이름</h4>
+  <p class="profile">소개글</p>
+  <button class="profile">빨간버튼</button>
+  <button class="profile">파란버튼</button>
+</div>
+
+1. class를 작명할 땐 우선 덩어리이름으로 시작하는게 좋습니다.
+
+덩어리를 전문용어로 컴포넌트라고 하니까 그렇게 부르겠습니다.
+
+아무튼 저는 프로필 소개하는 html 컴포넌트를 만들 것이기 때문에
+
+거기 안에 있는 모든 class명은 일단 profile 어쩌구로 우선 작명하면 됩니다.
+
+ 
+
+ 
+
+<div class="profile">
+  <img class="profile__img">
+  <h4 class="profile__h4">이름</h4>
+  <p class="profile__content">소개글</p>
+  <button class="profile__button">빨간버튼</button>
+  <button class="profile__button">파란버튼</button>
+</div>
+
+2. 태그마다 다른 class명을 부여하려면 __태그명을 뒤에 붙입니다.
+
+그니까 profile 안에 있는 img 태그는 profile__img
+
+그니까 profile 안에 있는 button 태그는 profile__button
+
+이렇게 __태그이름 으로 작명하라는 것입니다.
+
+이러면 작명할 때 생각 깊게 안해도 되겠죠?
+
+태그 이름 쓰기 싫으면 저처럼 content 이런 식으로 작명해도 봐드림 
+
+ 
+
+ 
+
+<div class="profile">
+  <img class="profile__img">
+  <h4 class="profile__h4">이름</h4>
+  <p class="profile__content">소개글</p>
+  <button class="profile__button--red">빨간버튼</button>
+  <button class="profile__button--blue">파란버튼</button>
+</div>
+
+3. 같은 태그들의 디자인을 구분하려면 --
+
+그니까 버튼이 색깔별로 여러개가 필요하다면 
+
+빨간 버튼은 --red
+
+파란 버튼은 --blue 를 뒤에 붙여서 작명하라는 겁니다.
+
+큰 버튼은 --big
+
+작은 버튼은 --small 이렇게 맘대로 수식어를 붙이면 됩니다. 
+
+ 
+
+ 
+
+BEM 룰을 쉽게 외우려면
+
+Block__Element--Modifer 이런 식으로 기억해주시면 됩니다.
+
+HTML 요소를 영어로 Element라고 하며 Modifier는 수식어라는 뜻입니다. 
+
+ 
+
+ 
+
+
+근데 지금 설명한 OOCSS 클래스 작성방식, BEM 작명방식 이런건 
+
+html css 파일이 크고 방대할 때 장점을 보이는 것이기 때문에 
+
+요즘 React, Vue를 이용해서 웹앱을 만들 때는 크게 유용하진 않습니다.
+
+React 이런 곳에선 html 페이지 단위가 아니라 작은 컴포넌트 단위로 개발하게 되며
+
+class 중복되어도 컴포넌트끼리 스타일이 간섭되지 않게 코드를 짤 수 있습니다.
+
+대표적으로 React 안에서 styled-components, module CSS 등의 라이브러리를 쓰면 그런게 가능합니다. 
+
+그래서 요즘은 BEM 이런거 깊게 익힐 필요는 없고 여기서 설명하는 것 까지만 아셔도 충분합니다. 

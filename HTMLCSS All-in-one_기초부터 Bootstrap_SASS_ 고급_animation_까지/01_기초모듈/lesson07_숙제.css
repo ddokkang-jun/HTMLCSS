@@ -1,0 +1,23 @@
+.container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.left {
+  width: 80%;
+  height: 200px;
+  background: #eee;
+  float: left;
+}
+.right {
+  width: 20%;
+  height: 200px;
+  float: left;
+}
+.profile-img {
+  width: 50px;
+  float: left;
+}
+.profile-info {
+  float: left;
+}

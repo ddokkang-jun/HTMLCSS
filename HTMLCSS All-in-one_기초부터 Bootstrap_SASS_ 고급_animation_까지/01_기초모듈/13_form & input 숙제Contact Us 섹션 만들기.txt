@@ -1,0 +1,119 @@
+form & input 숙제 : Contact Us 섹션 만들기
+
+
+
+
+
+form 레이아웃 제작시에도 포인트는 div박스입니다.
+
+ 
+
+뭘 만들든 일단 예시 디자인 위에 박스부터 그려놓고
+
+그걸 그대로 div 박스로 구현만 하면 쉽게 레이아웃 만들 수 있습니다.
+
+div 박스부터 배치하고 그 안에 글넣고 그림넣고 input 넣고 그러시면 됩니다.
+
+ 
+
+ 
+
+ 
+
+ 
+
+저는 박스 디자인을 이렇게 해놨습니다.
+
+ 
+
+<form>
+  <div class="w-100">
+    <input>
+  </div>
+  <div class="w-50">
+    <input>
+  </div>
+  <div class="w-50">
+    <input>
+  </div>
+  <div class="w-100">
+    <textarea></textarea>
+  </div>
+</form>
+
+가로로 꽉찬 input들은 w-100 이라는 div에 싸매고,
+
+가로로 반반 차지할 input들은 w-50 이라는 div에 싸맸습니다
+
+그리고 w-100은 width : 100%
+
+w-50은 width : 50%; float : left 
+
+이렇게 주었다고 합니다. 
+
+float 주면 당연히 어딘가에 clear : both 도 있어야겠군요
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<input> 태그 디자인은
+
+ 
+
+가로로 100% 폭을 주었고
+
+padding 조금 주고
+
+box-sizing : border-box
+
+이런걸 줬습니다.
+
+border-box 안해놓으면 폭이 padding을 포함해서 조금 커질 수 있기 때문입니다. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+전송버튼 만들기 
+
+ 
+
+<form>
+  <button type="submit">전송</button>
+  <input type="submit">
+</form>
+
+당연히 두개 중 마음에 드는걸로 만드시면 됩니다.
+
+저는 button이 좋습니다.
+
+ 
+
+ 
+
+label 태그와 for 속성
+
+ 
+
+<input type="checkbox" id="subscribe">
+<label for="subscribe">누르기</label>
+label과 for 속성을 적절히 활용하면
+
+input대신 label을 눌러도 input을 선택할 수 있습니다.
+
+(input의 id, label의 for 속성을 똑같이 맞춰주면 됩니다)
+
+
+
+혹은 그냥 <input> 에 제목이 필요할 때도 h, p 태그 이런거 말고 <label> 태그를 가끔 이용합니다.

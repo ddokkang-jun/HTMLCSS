@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  overflow: hidden;
+}
+.left {
+  width: 80%;
+  height: 200px;
+  float: left;
+}
+.right {
+  width: 20%;
+  height: 200px;
+  float: right;
+}
+.title_area {
+  height: 100px;
+}
+.logo {
+  width: 10%;
+  height: 100px;
+  float: left;
+}
+.user-id {
+  width: 90%;
+  height: 100px;
+  float: right;
+}
+.lion-img {
+  width: 100px;
+  height: 100px;
+}
+.left-text-area {
+  clear: both;
+}

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:wght@300;400;600;700&display=swap');
+body {
+  font-family: 'Nanum Gothic','Open Sans', sans-serif;
+}
+p,h1,h2,h3,h4,h5,h6,span {
+  transform: rotate(0.04deg);
+}
+div {
+  box-sizing: border-box;
+}
+input {
+  margin: 10px 0;
+}
+.main-container {
+  /* width: 100%; */
+  height: 100vh;
+  padding: 1px;
+  background-image: url(../imgs/shoes.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.main-banner-area {
+  padding: 50px;
+  margin-top: 100px;
+  text-align: center;
+}
+.main-banner-title {
+  margin: 0;
+  color: white;
+  font-size: 100px;
+}
+.main-banner-text {
+  color: whitesmoke;
+  font-size: 50px;
+}
+.main-banner-btn {
+  width: 200px;
+  padding: 20px;
+  background: whitesmoke;
+  border: none;
+  font-size: 24px;
+  border-radius: 10px;
+  margin-top: 100px;
+  transition: all 0.3s ease;
+}
+.main-banner-btn:hover {
+  background-color: #ddd;
+}
+.second-banner {
+  height: 500px;
+}
+.second-banner-text {
+  position: relative;
+  top: -60px;
+  margin: auto;
+  width: 80%;
+  max-width: 800px;
+  /* height: 300px; */
+  padding: 30px;
+  background: #eee;
+  text-align: center;
+}
+.second-banner-text h4 {
+  margin: 0;
+}
+.third-banner {
+  height: 700px;
+  background: #eee;
+}
+.footer {
+  height: 200px;
+  background: #000;
+}
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index: 100;
+  padding: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+.white-bg {
+  width: 50%;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+} 
+.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+.contact-us-title {
+  font-weight: bold;
+}
+.firstName {
+  width: 48%;
+  float: left;
+}
+.lastName {
+  width: 48%;
+  float: right;
+}
+.message-area {
+  clear: both;
+}
+.subscribe-btn-area {
+  height: 50px;
+  width: 100%;
+}
+.subscribe-area {
+  float: left;
+}
+.send-close-btn-area {
+  float: right;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  background-color: #f56969;
+  color: #eee;
+  font-size: 36px;
+}
+.nav_item {
+  padding: 10px;
+  margin: 0 10px;
+}
+.logo {
+  font-size: 48px;
+  font-weight: bold;
+  flex-grow: 1;
+  width: 100px;
+}

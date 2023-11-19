@@ -1,0 +1,220 @@
+transform & animation 숙제 해설 (움직이는 메뉴)
+
+ 
+
+0:00 숙제1 버튼 흔들흔들
+
+2:59 숙제2 +버튼 회전
+
+6:22 숙제3 슬라이드되는 검은 메뉴
+
+ 
+
+ 
+
+ 
+
+1. 마우스를 올리면 흔들리는 버튼 만들기
+
+분석해보면 (1) 좌측 회전 (2) 우측 회전 (3) 좌측 회전 (4) 제자리로 이동합니다.
+
+
+
+ 
+
+2. 마우스를 올리면 회전하는 + 기호 만들기
+
+분석해보면 (1) 좌측 회전 (2) 우측 회전 + 약간 커지기 순으로 동작합니다.
+
+
+
+ 
+
+3. 이런 메뉴 만들기
+
+ 
+
+
+
+ 
+
+- 마우스 올리면 검은 메뉴 우측 이동
+
+- 마우스 올리면 우측에 있던 Menu 글자는 가운데로
+
+- 마우스 올리면 Item 글자는 (1) 우측 이동 (2) 살짝 비틀기 (3) 좌측이동
+
+ 
+
+ 
+
+ 
+
+ 
+
+숙제1. 흔들버튼 만들기 
+
+ 
+
+.ani-button {
+  padding: 15px 20px;
+  font-size: 20px;
+  background: skyblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  margin: 30px auto;
+}
+
+
+(복붙용 버튼 기본 디자인)
+
+ 
+
+버튼을 좌우로 흔들고 싶다면 transition만으로는 할 수 없습니다.
+
+one-way가 아니라 a -> b -> a 이런 식의 복잡한 애니메이션이니까요. 
+
+keyframes가 필요합니다.
+
+좌우로 흔들리는 keyframes를 정의한 후
+
+ani-button에 마우스를 올렸을 때 그 애니메이션을 적용시키면 끝입니다. 
+
+ 
+
+ 
+
+.ani-button:hover {
+  animation-name: shake;
+  animation-duration: 1s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg)}
+  25% { transform: rotate(-8deg)}
+  50% { transform: rotate(8deg)}
+  75% { transform: rotate(-8deg)}
+  100% { transform: rotate(0deg)}
+} 
+
+
+그래서 저는 이런 코드를 넣었더니 애니메이션이 동작한다고 합니다. 끝 
+
+ 
+
+ 
+
+ 
+
+숙제2. + 버튼 만들기
+
+ 
+
+.ani-x {
+  margin: 150px auto;
+  text-align: center;
+  font-size: 70px;
+  width: 84px;
+  cursor: pointer;
+}
+
+
+(복붙용 기본 디자인)
+
+ 
+
++ 기호는 참고로 그냥 키보드에 있는 글자로 만들었습니다. 
+
+역시 이 요소도 일방향 애니메이션이 아니기 때문에 animation & keyframes가 필요합니다.
+
+좌우로 흔들리는 keyframes를 정의한 후
+
+ani-x에 마우스를 올렸을 때 그 애니메이션을 적용시키면 끝입니다. 
+
+ 
+
+ 
+
+.ani-x:hover {
+  animation-name: turn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes turn {
+  0% { transform: rotate(0deg) }
+  25% { transform: rotate(-15deg) }
+  100% { transform: rotate(45deg) scale(1.5)}
+} 
+
+
+이랬다고 합니다.
+
+animation-fill-mode: forwards 이건 애니메이션 끝났을 때 상태유지입니다.
+
+ 
+
+
+ 
+
+숙제3. 슬라이딩 메뉴 만들기
+
+ 
+
+.ani-navbar {
+  width: 200px;
+  background: black;
+  color: white;
+  height: 100%;
+  padding: 25px;
+  position: fixed;
+  z-index: 5;
+  text-align: right;
+  transition: all 1s;
+  transform: translateX(-150px);
+}
+.ani-navbar:hover {
+  transform: translateX(0px);
+  text-align: center;
+}
+<nav class="ani-navbar">
+  <h4>Menu</h4>
+  <p>Item</p>
+</nav>
+
+
+
+일단 마우스 올리면
+
+1. 검은 메뉴 우측이동 
+
+2. Menu 글자 가운데 정렬 
+
+을 해야되는데 위처럼 코드짜서 구현했습니다.
+
+이 두개는 a -> b로 이동하는 one-way 애니메이션이기 때문에
+
+예전처럼 transition 으로 애니메이션을 구현했습니다. 끝 
+
+ 
+
+그리고 3. Item 글자는 우측이동 + skew / 좌측이동 이런 식으로 구현하면 될텐데
+
+복잡한 애니메이션이기 때문에 keyframes를 정의하고 집어넣었습니다.
+
+ 
+
+@keyframes slide {
+  0% { transform: translateX(-250px) }
+  50% { transform: translateX(50px) skewX(-30deg)}
+  100% { transform: translateX(0px) }
+}
+
+.ani-navbar:hover p {
+  animation-name: slide;
+  animation-duration: 1s;
+} 
+
+코드 따라치기만 하면 따라치기 스킬만 늡니다. 

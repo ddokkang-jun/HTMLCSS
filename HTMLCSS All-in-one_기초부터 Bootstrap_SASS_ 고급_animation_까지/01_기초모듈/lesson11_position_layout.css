@@ -1,0 +1,110 @@
+div {
+  box-sizing: border-box;
+}
+input {
+  margin: 10px 0;
+}
+.main-bg {
+  /* width: 100%; */
+  height: 100vh;
+  padding: 1px;
+  background-image: url(../imgs/shoes.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.main-banner-area {
+  padding: 50px;
+  margin-top: 100px;
+  text-align: center;
+}
+.main-banner-title {
+  margin: 0;
+  color: white;
+  font-size: 100px;
+}
+.main-banner-text {
+  color: whitesmoke;
+  font-size: 50px;
+}
+.main-buy-btn {
+  width: 200px;
+  padding: 20px;
+  background: whitesmoke;
+  border: none;
+  font-size: 24px;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+.second-banner {
+  height: 500px;
+}
+.second-banner-text {
+  position: relative;
+  top: -60px;
+  margin: auto;
+  width: 80%;
+  max-width: 800px;
+  /* height: 300px; */
+  padding: 30px;
+  background: #eee;
+  text-align: center;
+}
+.second-banner-text h4 {
+  margin: 0;
+}
+.third-banner {
+  height: 700px;
+  background: #eee;
+}
+.footer {
+  height: 200px;
+  background: #000;
+}
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index: 100;
+  padding: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+.white-bg {
+  width: 50%;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+} 
+.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+.contact-us-title {
+  font-weight: bold;
+}
+.firstName {
+  width: 48%;
+  float: left;
+}
+.lastName {
+  width: 48%;
+  float: right;
+}
+.message-area {
+  clear: both;
+}
+.subscribe-btn-area {
+  height: 50px;
+  width: 100%;
+}
+.subscribe-area {
+  float: left;
+}
+.send-close-btn-area {
+  float: right;
+}

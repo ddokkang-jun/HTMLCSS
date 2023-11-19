@@ -1,0 +1,91 @@
+Portfolio 실습 2 : SNS Profile
+
+
+
+
+실전 페이지 제작을 체험해볼 수 있는 강의며 텍스트로 진행됩니다. 
+
+다음 요구사항에 맞춰 '직접' 페이지를 제작해본 뒤에
+
+미흡하거나 궁금한 부분이 있다면 해설편을 보고  힌트를 얻어갑시다. 
+
+ 
+
+
+
+1.  위 사진과 비슷하게 생긴 HTML 페이지를 만들어오면 됩니다. 
+
+ 
+
+2. 반응형 레이아웃 예시도 첨부해드리니 반응형으로 만들어오십시오. 
+
+모바일 디자인만 첨부해드립니다. 태블릿 디자인은 안해도 될듯
+
+ 
+
+3. Bootstrap 배웠으니 써보는게 어떨까요. 
+
+해설도 Bootstrap으로 진행할 예정입니다.
+
+내가 만든 CSS 파일 사용하는건 제약이 없습니다. 
+
+ 
+
+ 
+
+- 회색 배경색은 #f7f9fc 하늘색은 #6fbaf8 입니다.
+
+- 세로정렬되는 기준 화면폭 (breakpoint) 은 임의로 정하셔도 무방합니다.
+
+- 귀찮으니 아이콘 등은 fontawesome 라이브러리를 이용합니다. 
+
+아니면 Bootstrap 홈페이지 잘 찾아보시면 간단한 Icon 사용도 가능합니다. 
+
+
+
+
+
+Eva De Dominici
+
+location
+Avellaneda, Buenos Aires, Argentina
+
+age
+April 21, 1995 
+
+experience
+신입
+
+school
+MBA Student University of Delhi 
+
+profile
+
+works
+La fragilidad de los cuerpos (2017)
+Tiger, Blood in the Mouth (2016) 
+and Cosmic Sin (2021)
+
+about
+She lives with her parents. In March 2016, she began a relationship with the actor Joaquín Furriel, from whom she separated in 2018. In 2018 she began a relationship with Eduardo Cruz, brother of Spanish actress Penélope Cruz. On October 6, 2019, they became parents for the first time of a boy whom they named Cairo Cruz in Los Angeles, California.
+
+skills
+
+html5
+javaScript
+CSS3
+illustrator
+photoShop
+
+find me at linkedout.com
+sign up
+already a member?
+
+people you might know
+Eduardo Cruz
+actor
+Argentina
+
+Joaquín Furriel
+actor
+Argentina

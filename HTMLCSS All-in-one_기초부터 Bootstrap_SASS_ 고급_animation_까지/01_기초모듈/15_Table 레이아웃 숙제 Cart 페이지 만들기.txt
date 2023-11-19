@@ -1,0 +1,153 @@
+Table 레이아웃 숙제 : Cart 페이지 만들기
+
+
+
+
+
+
+오늘 배울 내용 : nth-child 셀렉터 
+
+.cart-table td:nth-child(2) {
+  color: red;
+}
+
+여러 요소를 찾은 다음
+
+원하는 n번째 요소만 스타일을 주고 싶으면 :nth-child(n) 이걸 뒤에 붙여주면 됩니다.
+
+위의 코드는 그래서 .cart-table 안에 있는 모든 td를 찾은 다음
+
+2번째 나오는 td에만 color를 줄 수 있습니다. 
+
+테이블에서 원하는 순서의 셀에 스타일줄 때 가끔 유용하게 사용합니다.
+
+ 
+
+ 
+
+ 
+
+.cart-table td:nth-child(even) {
+  color: red;
+}
+
+이러면 짝수로 등장하는 td에만 스타일을 줄 수도 있고
+
+(odd라고 쓰면 홀수입니다)
+
+ 
+
+ 
+
+ 
+
+.cart-table td:nth-child(3n+0) {
+  color: red;
+}
+
+이러면 3의 배수로 등장하는 3,6,9,12.. 번째 등장하는 요소에만 스타일을 줄 수 있습니다.
+
+3n + 1 이렇게 작성하면 (3의배수 +1) 번째 등장하는 요소에만 스타일을 줄 수 있습니다. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+포인트1. 테두리 색상은 밑에만 넣고 싶으면
+
+td, th {
+  border-bottom : 1px solid black;
+}
+
+border-bottom 쓰면 됩니다 
+
+ 
+
+ 
+
+ 
+
+ 
+
+포인트2. 셀 블록마다 width를 설정해줄 수 있습니다.
+
+<table>
+  <tr>
+    <td class="name">상품명</td>
+    <td class="price">가격</td>
+    <td>수량</td>
+  </tr>
+</table>
+
+.name {
+  width : 50%
+}
+.price {
+  width : 20%
+}
+
+하나의 td에 width를 주어도 전체 열의 width가 변합니다.
+
+나름 편리한 점이라고 볼 수 있겠습니다.
+
+ 
+
+ 
+
+ 
+
+포인트3. td 여러개를 합치고 싶으면
+
+<td colspan="4"></td>
+colspan에 원하는 숫자를 넣으면 그 숫자만큼 옆의 셀을 합쳐줍니다. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+간혹 border-collapse 속성을 table태그에 적용하면 border-radius가 안먹는 경우가 있습니다. 
+
+그럴 때 사용할만한 방법들을 소개해드립니다. 
+
+ 
+
+table 태그에 border-radius가 안먹을 때 1. 
+
+table {
+  border-collapse : collapse;
+  border-spacing : 0;
+}
+
+(왼쪽위에있는 td) {
+  border-top-left-radius : 5px;
+}
+ 
+
+ 
+
+table 태그에 border-radius가 안먹을 때 2. 
+
+table {
+  border-collapse : collapse;
+  border-radius : 7px;
+  border-style : hidden;
+  box-shadow : 0 0 0 1px #666;
+}
+
+box-shadow라는 속성을 이용해 테두리를 가짜로 만들어내는 편법입니다.
+
+box-shadow는 그림자 넣는 속성입니다. 

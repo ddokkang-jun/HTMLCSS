@@ -1,0 +1,106 @@
+
+웹레이아웃의 기초 : div를 이용한 네모네모 박스 디자인
+
+
+오늘의 숙제 : 
+
+오늘 만든 박스에 우측하단 그림자를 넣어보십시오.
+
+안이뻐도 상관없으니 막 줘보셈 
+
+당연히 안배운건 구글 검색해서 해야합니다.
+
+
+
+네모 박스 디자인에 많이 사용하는 CSS 속성
+
+ 
+
+.box {
+  margin : 20px; 
+  padding : 30px;
+  border : 1px solid black;
+  border-radius : 5px;
+}
+
+margin은 바깥 여백,
+
+padding은 안쪽 여백,
+
+border는 테두리 (차례로 두께, 선의 종류, 색상),
+
+border-radius는 테두리 둥글게 처리입니다. 
+
+가운데 정렬도 많이 하는데 저번 이미지처럼 display : block; margin-left : auto; margin-right : auto 이렇게 주면 됩니다.
+
+ 
+
+ 
+
+Q. 이렇게 많은 스타일을 다 언제 외우고 있냐고요?
+
+외워봤자 맨날 까먹기 때문에 필요하면 구글에서 찾아쓰는게 일반적입니다. 
+
+ 
+
+ 
+
+margin과 padding을 원하는 방향에만 줄 수 있습니다.
+
+ 
+
+.box {
+  margin-top : 20px;
+  padding-left : 30px; 
+}
+
+top, left, bottom, right 중 원하는 곳에만 여백을 줄 수 있습니다. 
+
+(참고) margin은 음수도 가능합니다. -20px 이런 식입니다.
+
+(참고) margin : 5px 6px 7px 8px; 이렇게 띄어쓰기를 이용해 작성하시면
+
+차례로 상 우 하 좌 마진을 5,6,7,8px 한번에 줄 수 있습니다. 
+
+ 
+
+ 
+
+display : block이 내장되어있는 div박스
+
+
+.box {
+  display : block;
+}
+
+모든 div, p, h1, li 등은 display : block 속성을 주지 않아도 기본적으로 내장되어있습니다. 
+
+그래서 p태그나 div태그를 그냥 사용하면 한 행을 전부 차지하게 됩니다. 
+
+이게 싫다면 display 속성을 다른 것으로 부여해주면 됩니다.
+
+display : inline, inline-block, flex 등 여러가지가 있습니다. 
+
+ 
+
+ 
+
+일부 스타일은 inherit 됩니다
+
+ 
+
+font-size, color, font-family, text-align 이런 속성들은
+
+부모 태그에 쥐어주면 거기 안에 있던 태그들까지 전부 상속됩니다. 
+
+영어로 inherit 된다고합니다. 
+
+안에 글자들이나 태그들이 많을 경우 전부 font-size를 작성안해도 
+
+부모태그에 한번에 작성하고 끝낼 수 있으니 편리합니다. 
+
+다 inherit되는건 아니고 글자와 관련된 스타일들이 주로 inherit 됩니다.  
+
+ 
+
+다음시간까지 숙제나 해보도록 합시다. 

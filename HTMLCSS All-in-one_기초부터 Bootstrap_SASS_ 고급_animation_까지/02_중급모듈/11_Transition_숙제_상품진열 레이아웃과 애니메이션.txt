@@ -1,0 +1,177 @@
+Transition 숙제 : 상품진열 레이아웃과 애니메이션
+
+
+
+
+
+0:00 알아서 해보라고 마지막 힌트드림
+
+5:14 숙제 해설 
+
+10:26 다른 사이트에서 애니메이션 카피하는 법 
+
+ 
+
+
+ 
+
+힌트 드릴테니 알아서 해오십시오 
+
+ 
+
+저번시간 레이아웃 그대로 활용하면서 CSS만 수정하려고 하면 아마 안될 겁니다.
+
+(이유1) 왜냐면 "이미지에 마우스를 올리면 위에있는 .overlay 박스의 스타일을 수정하라"
+
+이런 코드는 짤 수 없기 때문입니다.
+
+CSS에선 내 위에 있는 <div> 이런거 선택할 수 있는 셀렉터는 없습니다.
+
+유사한게 + 셀렉터가 있는데 이건 내 다음에 나오는 <div> 이런거 선택하는 형제 (sibling) 셀렉터입니다.
+
+ 
+
+(이유2) "이미지에 마우스를 올리면 div를 이미지 위에 출현시켜라~"
+
+이런 식으로 코드를 짜놓으면 제대로 동작하지 않습니다. 
+
+이미지와 div박스가 겹치는 순간 여러분은 더 이상 이미지에 마우스를 올릴 수 없거든요. 
+
+그래서 말이 되지 않습니다. 
+
+ 
+
+ 
+
+ 
+
+그래서 HTML 레이아웃을 이렇게 변경하는건 어떨까요 
+
+<div class="overlay-wrap">
+  <div class="overlay-black">
+    <span>$60</span>
+  </div>
+</div>
+<img src="img/product1.jpg">
+ 
+
+이미지 위에 투명한 div 박스(overlay-wrap)를 하나 마련해놓고
+
+그 안에 검은색용 div박스 (overlay-black)을 마련했습니다. 
+
+이 경우 overlay-wrap에 마우스를 올리면
+
+안에있는 overlay-black 박스를 위로 올려주세요~ 라고 코드를 짤 수 있기 때문입니다.
+
+물론 다른 해결책이 있을 수 있으니 아무튼 혼자 잘 해보십시오. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+저는 숙제 어떻게 했냐면 
+ 
+
+1. 시작스타일과 
+
+2. 최종스타일부터 만들면 됩니다. 
+
+ 
+
+ 
+
+<div class="overlay-wrap">
+  <div class="overlay-black">
+    <span>$60</span>
+  </div>
+</div>
+<img src="img/product1.jpg">
+
+
+HTML은 아까처럼 이렇게 짜놨고 
+
+ 
+
+ 
+
+.overlay-wrap {
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  overflow : hidden
+}
+
+▲ wrap-overlay라는 박스는 그냥 이미지를 덮는 투명한 박스로 디자인했습니다.
+
+그리고 overflow로 넘치는건 안보이게 처리하라고 했습니다.
+
+ 
+ 
+ 
+
+.overlay-black {
+  width : 100%;
+  height : 100%;
+  background : rgba(0,0,0,0.3);
+  padding : 20px;
+  margin-top : 50%;
+}
+
+▲ overlay-black이라는 박스는 투명한 박스 내에 존재하는 시커먼 박스입니다. 
+
+margin-top을 조정하시면 최종스타일과 시작스타일을 만드실 수 있습니다.
+
+margin-top : 100% 이게 시작스타일,
+
+margin-top : 50% 이게 최종스타일입니다.
+
+아까 박스에 overflow : hidden 없었으면 이상하게 넘쳐보였겠죠?
+
+ 
+
+ 
+
+3. 어떨 때 최종스타일로 변하는 것인지 짜면 되는데
+
+.overlay-wrap 박스에 마우스를 올리면 .overlay-black이 최종화면이 되도록 코드를 짜면 되겠군요.
+
+ 
+ 
+
+ 
+
+.overlay-wrap:hover .overlay-black {
+  margin-top : ??px;
+}
+
+▲ wrap-overlay라는 박스에 hover시,
+
+내부에 있는 .overlay-black이라는 요소를 margin-top 변화시키라고 코드짜놨습니다.
+
+3번 끝 
+
+ 
+
+ 
+
+4. 그리고 마무리로 transition 속성을 예쁘게 입혀주어 애니메이션을 만들어보면 되겠습니다.  
+
+ 
+
+(참고1) 기존 요소에 :hover할 때 뭔가 덮어주는 애니메이션 만들 때
+
+기존 요소를 덮고나면 더 이상 :hover 상태가 아닐 수 있습니다. 
+
+ 
+
+(참고2) .box:hover .box2 라고 사용하면 .box에 마우스를 올렸을 때 내부에 있는 .box2를 움직이게 만들 수 있습니다.
+
+셀렉터 문법 쓰는데 제한은 없습니다. 
+
+ 
+
+(참고3) 지금은 마우스 올렸을 때만 애니메이션 트리거가 가능한데 자바스크립트/jQuery를 배우시면 코딩 범위가 넓어집니다. 

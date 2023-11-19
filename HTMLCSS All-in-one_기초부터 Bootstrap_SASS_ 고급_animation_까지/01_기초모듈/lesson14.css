@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+}
+.cart-table {
+  background: #beecfa;
+  width: 100%;
+  height: 100%;
+}
+.table-area {
+  width: 800px;
+  height: 100vh;
+  margin: auto;
+  padding: 30px;
+  background: #beecfa;
+}
+.table-title {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.head-title {
+  height: 50px;
+}
+.border-blue {
+  border: 2px solid #beecfa;
+}
+.product-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+}
+.product-img {
+  width: 100%;
+  height: 300px;
+}
+.pay-btn-area {
+  float: right;
+}
+.pay-btn {
+  border: none;
+  outline: none;
+  background-color: #21498a;
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+}
