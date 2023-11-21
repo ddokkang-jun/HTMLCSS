@@ -14,95 +14,150 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
-		<link rel="stylesheet" href="../기초모듈/normalize.css" />
+		<link rel="stylesheet" href="../01_기초모듈/normalize.css" />
 		<link rel="stylesheet" href="13_Dashboard.css" />
 	</head>
 	<body>
-		<div id="wrapper">
-			<ul class="sidebar">
-				<li><i class="fas fa-home"></i></li>
-				<li><i class="fas fa-headphones"></i></li>
-				<li><i class="fas fa-flag"></i></li>
-				<li><i class="fas fa-chart-pie"></i></li>
-				<li><i class="fas fa-envelope"></i></li>
-				<li><i class="fas fa-bell"></i></li>
-				<li><i class="fas fa-tasks"></i></li>
-				<li><i class="fas fa-calendar"></i></li>
-				<li><i class="fas fa-dollar-sign"></i></li>
-				<li><i class="fas fa-comments"></i></li>
-			</ul>
-			<div id="content-wrapper">
-				<nav class="navbar navbar-expand-lg bg-body-tertiary">
-					<div class="container-fluid">
-						<a class="navbar-brand" href="#">Navbar</a>
-						<button
-							class="navbar-toggler"
-							type="button"
-							data-bs-toggle="collapse"
-							data-bs-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent"
-							aria-expanded="false"
-							aria-label="Toggle navigation"
-						>
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="#"
-										>Home</a
-									>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Link</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a
-										class="nav-link dropdown-toggle"
-										href="#"
-										role="button"
-										data-bs-toggle="dropdown"
-										aria-expanded="false"
-									>
-										Dropdown
-									</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Action</a></li>
-										<li>
-											<a class="dropdown-item" href="#">Another action</a>
-										</li>
-										<li><hr class="dropdown-divider" /></li>
-										<li>
-											<a class="dropdown-item" href="#">Something else here</a>
-										</li>
-									</ul>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-								</li>
-							</ul>
-							<form class="d-flex" role="search">
-								<input
-									class="form-control me-2"
-									type="search"
-									placeholder="Search"
-									aria-label="Search"
-								/>
-								<button class="btn btn-outline-success" type="submit">
-									Search
-								</button>
-							</form>
-						</div>
-					</div>
-				</nav>
-				<h1>Dashboard</h1>
-				<div>이미지카드4장</div>
-				<div>
-					<div>Earnings Overview</div>
-					<div>Tasks</div>
-				</div>
+		<div class="sidebar">
+			<div>
+				<i class="fas fa-home"></i>
+				<span>Home</span>
+			</div>
+			<div>
+				<i class="fas fa-headphones"></i>
+				<span>Service</span>
+			</div>
+			<div>
+				<i class="fas fa-flag"></i>
+				<span>Alerts</span>
+			</div>
+			<div>
+				<i class="fas fa-chart-pie"></i>
+				<span>Status</span>
 			</div>
 		</div>
+
+		<!-- main -->
+		<div class="p-s-50">
+			<div class="navbar">
+				<div class="navbar-left">
+					<input type="text" placeholder="Search" />
+					<button class="navbar-left-search-button">
+						<i class="fas fa-search"></i>
+					</button>
+				</div>
+				<div class="navbar-right">
+					<i class="fas fa-bell"><span class="badge">9</span></i>
+					<i class="fas fa-envelope"><span class="badge">9</span></i>
+					<span>Minny Park</span>
+				</div>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+			<!-- dashboard -->
+			<section class="dashboard">
+				<h1>Dashboard</h1>
+				<div class="dashboard-list-row">
+					<div class="dashboard-list-item me-5 sky-blue-border">
+						<div>
+							<p>Earnings(Monthly)</p>
+							<p class="dashboard-list-point">$400,000</p>
+						</div>
+						<div><i class="fas fa-calendar fa-2x"></i></div>
+					</div>
+					<div class="dashboard-list-item me-5 green-blue-border">
+						<div>
+							<p>Earnings(Annual)</p>
+							<p class="dashboard-list-point">$800,000</p>
+						</div>
+						<div><i class="fas fa-dollar-sign fa-2x"></i></div>
+					</div>
+					<div class="dashboard-list-item me-5 deepSky-blue-border">
+						<div>
+							<p>Tasks</p>
+							<p class="dashboard-list-point">13</p>
+						</div>
+						<div><i class="fas fa-tasks fa-2x"></i></div>
+					</div>
+					<div class="dashboard-list-item yellow-blue-border">
+						<div>
+							<p>Request</p>
+							<p class="dashboard-list-point">26</p>
+						</div>
+						<div><i class="fas fa-comments fa-2x"></i></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- content -->
+			<section class="content">
+				<div class="my-row">
+					<div class="my-col-lg-8">
+						<div class="content-card-container">
+							<div class="content-card-head">Earnings Overview</div>
+							<div class="content-card-body">
+								<canvas id="myChart"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="my-col-lg-4">
+						<div class="content-card-container">
+							<div class="content-card-head">Tasks</div>
+							<div class="content-task-body">
+								<div class="content-task-item">
+									<span>Borrowed Items</span>
+									<span class="content-task-item-score">14</span>
+								</div>
+								<div class="content-task-item">
+									<span>Trello requests</span>
+									<span class="content-task-item-score">2</span>
+								</div>
+								<div class="content-task-item">
+									<span>Marked Comments</span>
+									<span class="content-task-item-score">1</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- chartjs.org -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script>
+			const ctx = document.getElementById("myChart");
+
+			new Chart(ctx, {
+				type: "bar",
+				data: {
+					labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+					datasets: [
+						{
+							label: "# of Votes",
+							data: [12, 19, 3, 5, 2, 3],
+							borderWidth: 1,
+						},
+					],
+				},
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true,
+						},
+					},
+				},
+			});
+		</script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

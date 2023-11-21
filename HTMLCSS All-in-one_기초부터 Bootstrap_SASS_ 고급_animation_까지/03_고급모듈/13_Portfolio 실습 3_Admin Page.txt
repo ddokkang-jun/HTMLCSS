@@ -120,6 +120,8 @@ labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         label: '# of Votes',
         data: [12, 19, 3, 5, 2, 3],
         fill : true,
+
+
 이 부분을 조작하시면 차트안의 데이터와 라벨을 수정가능합니다. 맘대로 바꿔봅시다. 
 
 fill : true, 이걸 저처럼 추가하면 라인차트의 경우 하단이 색칠됩니다. 
