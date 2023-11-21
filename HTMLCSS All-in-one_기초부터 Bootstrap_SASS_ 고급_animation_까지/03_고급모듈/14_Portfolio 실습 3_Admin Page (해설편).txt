@@ -1,0 +1,480 @@
+Portfolio 실습 3 : Admin Page (해설편)
+ 
+
+ 
+
+일단 저는 html 파일 만들고 부트스트랩 5, Font awesome 5버전 설치하고
+
+css 파일도 하나 새로 생성하고 코드 짰다고합니다. 
+
+ 
+
+ 
+
+1. 상단 navbar 만들기
+ 
+
+상단 메뉴는 간단하게 부트스트랩 navbar를 복붙했습니다.
+
+비슷한건 예전에 만들어 보셨으니 직접 만드는 것도 괜찮을듯요 
+
+ 
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Minny Park</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+</nav>
+1. 맨 처음 나오는 navbar 예제를 복붙하고 필요없는 부분 삭제하고, <form> 위치도 먼저오도록 바꿨습니다.
+
+2. navbar 안에서 왼쪽정렬 오른쪽정렬을 구현하고 싶으면 ms-auto 또는 me-auto를 사용하면 편리합니다.
+
+s는 start, e는 end의 약자인데 그래서 저도 몇군데 ms-auto 써봤습니다.
+
+ 
+
+ 
+
+ 
+
+
+
+▲ input과 버튼이 붙어있는 UI는
+
+직접 input과 button 집어넣고 서로 간격을 좁혀도 되고
+
+그냥 Bootstrap 사이트에서 Button addon 이라고 검색해보셔도 됩니다.
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+▲ 아이콘은 navbar 안의 글자 대신 Font awesome 아이콘을 집어넣어서 쉽게 만드시면 됩니다.
+
+<li class="nav-item">
+  <a class="nav-link" href="#"> <i class="fas fa-bell"></i> </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#"> Minny Park </a>
+</li>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+▲ 아이콘 위에 badge 요소를 추가하고 싶다면
+
+Bootstrap 홈페이지에서 badge라고 검색하거나 직접 빨간 박스 만들거나 하면 됩니다.
+
+ 
+
+<li class="nav-item">
+   <a class="nav-link" href="#">
+     <span class="badge bg-danger">5</span>
+     <i class="fas fa-bell"></i>
+   </a>
+</li>
+.nav-link {
+  position: relative;
+}
+.badge {
+  position : absolute;
+  top: 0px;
+  left: 15px;
+}
+1. 아이콘 위에 badge를 하나 넣었습니다. 직접 뱃지모양 만드셔도 되고 Bootstrap에서 복붙해도 됩니다.
+
+2. 공중에 띄우는건 당연히 position absolute 주면 편리합니다.
+
+뱃지와 글자를 감싸는 부분엔 position relative,
+
+뱃지에는 position absolute를 주어서 뱃지를 공중에 띄웠습니다.
+
+그리고 좌표속성을 주었다고 합니다. 
+
+ 
+
+3. 저는 기존에 있는 클래스명을 덮어쓰기 했는데 굳이 그럴 필요는 없습니다.
+
+클래스명 하나 새로 만드는게 좋습니다.
+
+ 
+
+ 
+
+
+
+
+ 
+
+2. Summary 카드 레이아웃 만들기
+ 
+
+저 부분은 Summary라고 부르도록 합시다. 
+
+Bootstrap이 설치되어있는 경우 가로로 4개 배치하려면 col-3 이런거 쓰면 됩니다.
+
+ 
+
+<div class="container">
+    <h4 class="my-4">Dashboard</h4>
+    <div class="row">
+      <div class="col-lg-3">카드~~</div>
+      <div class="col-lg-3">카드~~</div>
+      <div class="col-lg-3">카드~~</div>
+      <div class="col-lg-3">카드~~</div>
+    </div>
+</div>
+물론 lg 사이즈 이상에서만 가로로 배치하고 싶으면 lg 같은 조건식을 넣어주면 됩니다. 
+
+ 
+
+
+3. Summary 카드 내부 디자인
+ 
+
+<div class="col-lg-3">카드~~</div>
+
+여기 안에다가 카드 레이아웃 만들어주시면 되는데
+
+여러분쯤 되면 Bootstrap 카드 복사붙여넣기 하든 직접 만들든 알아서 할 수 있습니다. 
+
+ 
+
+ 
+
+<div class="card">
+  <div class="card-body d-flex justify-content-between">
+   <div>
+     <p class="card-text mb-2">Earnings (Monthly)</p>
+     <h4>$400,000</h4>
+   </div>
+   <i class="fas fa-calendar" style="font-size: 30px; margin-top: 20px"></i>
+ </div>
+</div>
+
+1. Bootstrap 카드레이아웃 마음에 드는거 복사했는데 
+
+2. 거기에 글자넣고 아이콘도 넣었습니다.
+
+ 
+
+3. 그리고 .card-body 부분에 display : flex, justify-content : space-between; 이걸 주어서 아이콘과 글자를 양옆으로 배치했습니다.
+
+근데 실은 이런 것도 bootstrap utility 클래스명으로 있어서 그거 썼습니다.
+
+절 굳이 따라할 필요는 없습니다. 방법은 100개임 
+
+ 
+
+4. 테두리 색상과 그림자 효과도 알아서 주면 됩니다. 
+
+ 
+
+ 
+
+
+
+ 
+
+4. Chart, Task 부분 레이아웃 디자인
+ 
+
+저는 왼쪽에 있는 차트용 카드는 8컬럼 만큼, 오른쪽 카드는 4컬럼 만큼 차지하게 만들었습니다.
+
+그럼 Grid 문법을 사용하면 이렇게 되겠고 
+
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-lg-8">카드</div>
+      <div class="col-lg-4">카드</div>
+    </div>
+</div>
+ 
+
+ 
+
+ 
+
+안에 마음에 드는 카드같은거 만들거나 복붙하면 됩니다.
+
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- 카드시작 -->
+        <div class="card">
+          <div class="card-header">
+            Earnings
+          </div>
+          <div class="card-body">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <!-- 카드 끝 -->
+
+      </div>
+      <div class="col-lg-4">카드</div>
+    </div>
+</div> 
+
+
+1. 카드 복붙했는데 카드 안에 차트넣으려고 일단 <canvas> 넣어뒀습니다.
+
+2. 두 번째 카드는 알아서 디자인하도록 합시다. 제거 그대로 따라해봤자 따라치기 실력이 늘 뿐입니다. 
+
+ 
+
+ 
+
+ 
+
+5. Chart 넣기
+ 
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+1. 이런 <script> 코드는 <body> 끝나기 전에 넣으면 좋댔으니 <body> 태그 끝나기 전에 넣었습니다. 
+
+그랬더니 <canvas id="myChart"> 부분에 차트가 뿅 생김 
+
+2. 커스터마이징은 Chart.js 홈페이지를 참고하거나 검색을 추천드립니다. 
+
+ 
+
+ 
+
+
+ 
+
+6. input이 길어지는 애니메이션
+ 
+
+input에 커서를 찍어놓으면 input이 길어져야합니다.
+
+input이 focus 상태일 때 width를 길게 설정해주는 애니메이션을 만들면 되겠군요
+
+"어 최근에 @keyframes 썼으니 그거 쓰면 되겠군" 이렇게 대충 판단하는게 아니라 정확한 기준을 가지고 쓰셔야합니다. 
+
+이건 복잡한 애니메이션이 아니라 a 상태에서 b 상태로 움직이기만 하면 되는것이니
+
+transition 하나만 써도 구현가능합니다. 
+
+ 
+
+.input-animation{
+  width: 150px;
+  transition: width 1s;
+}
+.input-animation:focus {
+  width: 500px;
+}
+
+
+1. 그래서 원하는 인풋에 input-animation이라는 클래스를 집어넣었고
+
+여기에 커서찍으면 (focus되면) width : 500px 하라고 했습니다.
+
+2. 애니메이션은 transition으로 주었습니다. 
+
+이제 잘 동작함 
+
+ 
+
+
+
+ 
+
+7. 왼쪽 파란색 사이드바 레이아웃
+ 
+
+왼쪽에 파란색 div박스를 만들어야합니다.
+
+근데 애니메이션은 신경쓰지말고 일단 애니메이션을 위한 시작, 최종스타일이나 만들어봅시다.
+
+150px 정도의 보라색 div 박스를 만들면 되고 그걸 지금 만든 레이아웃 왼쪽에 비집어넣으면 됩니다. 
+
+ 
+
+ 
+
+ 
+
+<body>
+  <!-- 파란색 사이드바 -->
+  <div class="sidebar">
+    <div>
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </div>
+    <div>
+      <i class="fas fa-car"></i>
+      <span>History</span>
+    </div>
+  </div>
+
+  <!-- 사이드바 제외 나머지 -->
+  <div class="content">여태까지 만들었던 것들 여기 쑤셔넣기</div>
+</body>
+
+
+.sidebar {
+  width: 150px;
+  height: 100vh;
+  background: #484bb3;
+  position: fixed;
+  z-index: 5;
+  color : white;
+  /* 나중에 줄 최종스타일
+  transform : translateX(-100px);
+   */
+}
+.sidebar div {
+  margin : 12px 0px 0px 15px;
+}
+.content {
+  margin-left : 50px;
+}
+
+
+1. 그래서 저는 <body> 안에 <div>를 두개 만들고 
+
+첫 <div>는 파란색으로 채우고
+
+둘째 <div>는 나머지 여태만들었던 레이아웃을 다 집어넣었습니다. 
+
+ 
+
+2. 파란색 사이드바는 150px 박스를 만들어놓고 position : fixed를 주었습니다.
+
+그냥 스크롤되어도 고정하고싶어서 그랬습니다. 싫으면 다르게 합시다. 
+
+ 
+
+3. 애니메이션을 더하려면 시작, 최종스타일을 뭘 줘야할지 판단해야하는데 
+
+시작스타일은 transform : translateX(-100px)
+
+최종스타일은 transform : translateX(0px) 이렇게 넣어보니 될 것 같군요. 나중에 써봅시다. 
+
+ 
+
+3. 파란색 사이드바의 높이는 100vh 로 만들어서 꽉 채웠습니다.
+
+100vh 대신 100% 이렇게 주면 어떻게 될까요? 실험해봅시다.
+
+ 
+
+ 
+
+
+
+ 
+
+8. 마우스 올릴 때 우측이동 애니메이션
+ 
+
+마우스 올리면 .sidebar 이게 우측으로 이동만 하면 됩니다.
+
+간단한 a -> b 애니메이션은 그냥 transition 쓰면 됩니다.
+
+ 
+
+.sidebar {
+  width: 150px; 
+  height: 100vh; 
+  background: #484bb3; 
+  position: fixed; 
+  z-index: 5;
+  color: white;
+/*  애니메이션시작화면 */
+  transition : all 0.5s;
+  transform: translateX(-100px);
+}
+.sidebar:hover {
+/*  애니메이션최종화면 */
+  transition : all 0.5s;
+  transform: translateX(0px);
+}
+
+
+이러면 이제 마우스 올리면 사이드바가 이동합니다. 끝 
+
+ 
+
+ 
+
+ 
+
+근데 아이콘들은 애니메이션 시작과 끝에서 스타일이 좀 달라져야하기 때문에
+
+그건 따로 스타일주면 되겠군요. 
+
+ 
+
+.sidebar i {
+  transition: all 0.5s;
+  transform: translateX(100px);
+}
+.sidebar:hover i {
+  transform: translateX(0px);
+} 
+
+
+이런 스타일을 하단에 추가했다고 합니다.
+
+그냥 시작, 최종스타일 만들고 transition 넣었습니다.
