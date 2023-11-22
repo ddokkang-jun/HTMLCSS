@@ -105,7 +105,8 @@
 						<div class="content-card-container">
 							<div class="content-card-head">Earnings Overview</div>
 							<div class="content-card-body">
-								<canvas id="myChart"></canvas>
+								<!-- canvas 높이는 직접 설정하면 됨 -->
+								<canvas id="myChart" height="500px"></canvas>
 							</div>
 						</div>
 					</div>
@@ -155,6 +156,8 @@
 							beginAtZero: true,
 						},
 					},
+					responsive: true, // 반응형 활성화
+					maintainAspectRatio: false, // 가로 세로 비율 비활성화
 				},
 			});
 		</script>
